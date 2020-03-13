@@ -7,12 +7,11 @@ let normalizeString = (inputString) => inputString.normalize('NFD').replace(/[\u
 	}, 
 	matchWord =  (source, textToFind, caseSensitiveEnabled=false, normalizeStringEnabled=true)=>{				
 		let sourceText = caseSensitiveEnabled ? source : source.toLowerCase(),
-			textToFind = caseSensitiveEnabled ? textToFind : textToFind.toLowerCase();
-		sourceText = normalizeStringEnabled ? normalizeString(source) : source
-		textToFind = normalizeStringEnabled ? normalizeString(textToFind) : textToFind;
-		console.log(sourceText, textToFind);
+			textToSearch = caseSensitiveEnabled ? textToFind : textToFind.toLowerCase();
+		sourceText = normalizeStringEnabled ? normalizeString(sourceText) : sourceText
+		textToSearch = normalizeStringEnabled ? normalizeString(textToSearch) : textToSearch; 
 		let vectorForSearch = getASCIIArray(sourceText),
-			vectorToFind = getASCIIArray(textToFind),
+			vectorToFind = getASCIIArray(textToSearch),
 			res = [];
 
 		for (let i = 0; i < vectorForSearch.length; i++) {
@@ -27,12 +26,12 @@ let normalizeString = (inputString) => inputString.normalize('NFD').replace(/[\u
 					}
 				}
 				if (wasFullMatch)
-					res.push(suspectedInitialPoint);
+					res.push(suspectedInitialPoint+1);
 				else
 					i--;
 			}
 		}
-		return res;
+		return res.length > 0 ? res : undefined;
 	};
 
 ///
@@ -41,7 +40,12 @@ let normalizeString = (inputString) => inputString.normalize('NFD').replace(/[\u
 ///	Parametro 3: * caseSensitiveEnabled: Por defecto esta deshabilitado. Validar mayusculas y minusculas
 ///	Parametro 4: * normalizeStringEnabled: Por defecto esta habilitado. Quitar tildes basados en NFD (Forma de Normalización de Composición Canónica.)
 ///
-matchWord('SExta frase más extensa que comedia francexsa al meXdiodía con tu éx', 'ex').join(', ');  
+(matchWord("Polly put the kettle on, polly put the kettle on, polly put the kettle on we'll all have tea", "Polly")  || ["<no matches>"]).join(", ");
+(matchWord("Polly put the kettle on, polly put the kettle on, polly put the kettle on we'll all have tea", "polly")  || ["<no matches>"]).join(", ");
+(matchWord("Polly put the kettle on, polly put the kettle on, polly put the kettle on we'll all have tea", "ll")  || ["<no matches>"]).join(", ");
+(matchWord("Polly put the kettle on, polly put the kettle on, polly put the kettle on we'll all have tea", "Ll")  || ["<no matches>"]).join(", ");
+(matchWord("Polly put the kettle on, polly put the kettle on, polly put the kettle on we'll all have tea", "X")  || ["<no matches>"]).join(", ");
+(matchWord("Polly put the kettle on, polly put the kettle on, polly put the kettle on we'll all have tea", "Polx")  || ["<no matches>"]).join(", ");
 
 
 
