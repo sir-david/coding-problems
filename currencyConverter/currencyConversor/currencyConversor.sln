@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "currencyConversor", "currencyConversor.csproj", "{719965E8-60B1-44FA-B8F6-F66CFF00B3C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "currencyConversor", "currencyConversor.csproj", "{719965E8-60B1-44FA-B8F6-F66CFF00B3C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rest-api", "..\rest-api\rest-api.csproj", "{6EC0C26B-DF32-4494-9824-BD65745E0DC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{719965E8-60B1-44FA-B8F6-F66CFF00B3C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{719965E8-60B1-44FA-B8F6-F66CFF00B3C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{719965E8-60B1-44FA-B8F6-F66CFF00B3C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC0C26B-DF32-4494-9824-BD65745E0DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC0C26B-DF32-4494-9824-BD65745E0DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC0C26B-DF32-4494-9824-BD65745E0DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC0C26B-DF32-4494-9824-BD65745E0DC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

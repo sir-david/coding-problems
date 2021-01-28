@@ -7,6 +7,6 @@ namespace currencyConversor.Converter
 
     public enum CurrencyType
     {
-        EUR, USD, CLP, PEN
+       NONE,  EUR, USD, CLP, PEN
     }
 }

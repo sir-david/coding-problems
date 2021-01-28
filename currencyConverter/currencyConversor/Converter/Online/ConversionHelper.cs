@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using currencyConversor.Model;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 
@@ -43,5 +45,21 @@ namespace currencyConversor.Converter
 
             return jsonString;
         }
+        public List<ExchangeRate> GetHistoryRange(CurrencyType from, CurrencyType to, string startDate, string endDate)
+        {
+            string url = this.settings.endPoint + "convert?q=" + from + "_" + to + "&compact=ultra&date=" + startDate + "&endDate=" + endDate + "&apiKey=" + this.settings.key;
+
+            var jsonString = ExecuteAndGetResponse(url);
+            var data = JObject.Parse(jsonString).First.ToArray();
+            return (from item in data
+                    let obj = (JObject)item
+                    from prop in obj.Properties()
+                    select new ExchangeRate
+                    {
+                        epochCreatedAt = Utils.Utils.DateTimeToUnix( Convert.ToDateTime( prop.Name)),
+                         change = $"{from.ToString()}_{to.ToString()}" ,
+                         factor= item[prop.Name].ToObject<double>()
+                    }).ToList();
+         }
     }
 }
