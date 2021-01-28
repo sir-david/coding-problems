@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "currencyConversor", "curren
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rest-api", "..\rest-api\rest-api.csproj", "{6EC0C26B-DF32-4494-9824-BD65745E0DC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "humidityTemperature", "..\humidityTemperature\humidityTemperature.csproj", "{8906AFBA-8BBC-466C-8A2E-44A1F55027BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6EC0C26B-DF32-4494-9824-BD65745E0DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EC0C26B-DF32-4494-9824-BD65745E0DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EC0C26B-DF32-4494-9824-BD65745E0DC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8906AFBA-8BBC-466C-8A2E-44A1F55027BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8906AFBA-8BBC-466C-8A2E-44A1F55027BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8906AFBA-8BBC-466C-8A2E-44A1F55027BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8906AFBA-8BBC-466C-8A2E-44A1F55027BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

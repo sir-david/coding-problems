@@ -12,7 +12,7 @@ namespace rest_api.Controllers
     {
         private const string WORD_FOR_LOCAL_ENVIROMENT = "local";
         private const string WEB_HOOK = @"https://webhook.site/14693700-0cce-4ef4-9961-e927cf90c008";
-        static currencyConversor.Converter.IConverter localConverter = new currencyConversor.Converter.LocalConverter(@"D:\sir-david\code\coding-problems\currencyConversor\bin\Debug\netcoreapp3.1\exchangeRateDB");
+        static currencyConversor.Converter.IConverter localConverter = new currencyConversor.Converter.LocalConverter(@"D:\sir-david\code\coding-problems\currencyConverter\currencyConversor\bin\Debug\netcoreapp3.1\exchangeRateDB");
         static currencyConversor.Converter.IConverter onlineConverter = new currencyConversor.Converter.OnlineConverter("https://free.currconv.com/api/v7/", "282abf33cfb4a9a08aa5");
 
 
